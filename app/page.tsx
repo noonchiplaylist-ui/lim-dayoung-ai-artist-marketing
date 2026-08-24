@@ -390,9 +390,9 @@ export default function Home() {
           <div>
             <p className="eyebrow">INSTAGRAM PREVIEW · @AI.FLOUUDY</p>
             <h2 id="instagram-preview-title">
-              프로필을 열기 전에도
+              AI로 만든 장면과
               <br />
-              대표 작업이 보이도록
+              <em>작업의 기록.</em>
             </h2>
           </div>
           <a

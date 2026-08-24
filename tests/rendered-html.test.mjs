@@ -33,6 +33,10 @@ test("renders the AI Artist Marketing portfolio", async () => {
   assert.match(html, /10\.6M/);
   assert.match(html, /CONTENT &amp; CHANNEL PRACTICE/);
   assert.match(html, /INSTAGRAM PREVIEW/);
+  assert.match(html, /AI로 만든 장면과/);
+  assert.match(html, /작업의 기록\./);
+  assert.doesNotMatch(html, /Selected work,|from @ai\.flouudy\./);
+  assert.doesNotMatch(html, /프로필을 열기 전에도|대표 작업이 보이도록/);
   assert.match(html, /Welcome to my box/);
   assert.match(html, /BRAND SNS · COMMUNITY · EVENT/);
   assert.match(html, /LouiLoui Brand Marketing/);
