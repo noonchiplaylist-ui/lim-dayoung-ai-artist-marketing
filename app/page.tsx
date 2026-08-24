@@ -60,6 +60,33 @@ const channelFeatures = [
   },
 ];
 
+const instagramPreviews = [
+  {
+    number: "01",
+    eyebrow: "VISUAL WORLD",
+    title: "Welcome to my box",
+    image: "work/flouudy-hero.jpg",
+    imageAlt: "Flouudy AI Box Instagram 비주얼 작업",
+    href: "https://www.instagram.com/ai.flouudy/p/DTU5xv5E1Bo/",
+  },
+  {
+    number: "02",
+    eyebrow: "FILM PROCESS",
+    title: "Losing · First festival",
+    image: "work/losing.jpg",
+    imageAlt: "AI 단편영화 Losing Instagram 제작 기록",
+    href: "https://www.instagram.com/ai.flouudy/reel/DVi3HAoky1i/",
+  },
+  {
+    number: "03",
+    eyebrow: "COMMERCIAL PROCESS",
+    title: "T membership",
+    image: "work/skt-membership.jpg",
+    imageAlt: "SKT T membership Instagram 제작 기록",
+    href: "https://www.instagram.com/ai.flouudy/p/DWZ7sJCk1cn/",
+  },
+];
+
 const louiGallery = [
   {
     label: "01 · BRAND SYSTEM",
@@ -172,6 +199,14 @@ export default function Home() {
           <a href="#capabilities">Capabilities</a>
           <a href="#work">Evidence</a>
           <a href="#channels">Channels</a>
+          <a
+            className="nav-instagram"
+            href="https://www.instagram.com/ai.flouudy/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Instagram ↗
+          </a>
           <a href="#operations">Operations</a>
           <a href="#about">About</a>
           <a className="nav-cta" href="mailto:tocute@naver.com">
@@ -346,6 +381,52 @@ export default function Home() {
             <strong>OPEN INSTAGRAM ↗</strong>
           </div>
         </a>
+      </section>
+
+      <section className="instagram-preview" aria-labelledby="instagram-preview-title">
+        <header className="instagram-preview-heading">
+          <div>
+            <p className="eyebrow">INSTAGRAM PREVIEW · @AI.FLOUUDY</p>
+            <h2 id="instagram-preview-title">
+              프로필을 열기 전에도
+              <br />
+              대표 작업이 보이도록
+            </h2>
+          </div>
+          <a
+            className="instagram-profile-cta"
+            href="https://www.instagram.com/ai.flouudy/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram @ai.flouudy 전체 프로필 열기"
+          >
+            <span>View full Instagram</span>
+            <strong>@ai.flouudy ↗</strong>
+          </a>
+        </header>
+
+        <div className="instagram-thumbnail-grid">
+          {instagramPreviews.map((item) => (
+            <a
+              className="instagram-thumbnail"
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              key={item.number}
+              aria-label={`${item.title} Instagram 게시물 열기`}
+            >
+              <div className="instagram-thumbnail-media">
+                <img src={item.image} alt={item.imageAlt} />
+                <span>{item.number}</span>
+              </div>
+              <div className="instagram-thumbnail-copy">
+                <p className="eyebrow">{item.eyebrow}</p>
+                <h3>{item.title}</h3>
+                <small>OPEN POST ↗</small>
+              </div>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section className="section journal-section" id="channels">

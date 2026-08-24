@@ -32,6 +32,8 @@ test("renders the AI Artist Marketing portfolio", async () => {
   assert.match(html, /AI ARTIST MARKETING/);
   assert.match(html, /10\.6M/);
   assert.match(html, /CONTENT &amp; CHANNEL PRACTICE/);
+  assert.match(html, /INSTAGRAM PREVIEW/);
+  assert.match(html, /Welcome to my box/);
   assert.match(html, /루이루이/);
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
