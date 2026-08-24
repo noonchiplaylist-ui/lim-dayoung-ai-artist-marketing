@@ -51,12 +51,14 @@ const channelFeatures = [
     href: "https://www.youtube.com/@flouudy_box_box",
   },
   {
-    eyebrow: "TOPIC CHANNEL EXPERIMENT",
-    title: "Workroom Playlist",
+    eyebrow: "BRAND SNS · COMMUNITY · EVENT",
+    title: "LouiLoui Brand Marketing",
     description:
-      "작업하는 사람을 위한 플레이리스트 채널 실험입니다. 타깃 상황을 정하고 음악, 비주얼, 제목과 채널 문구를 하나의 사용 경험으로 구성했습니다.",
-    visualText: "WORK\nROOM",
-    href: "https://www.youtube.com/channel/UCyPAD_oUUNv7grAV8w3T4Rg",
+      "브랜드 Instagram 페이지와 맘카페 커뮤니티를 운영하고, 고객 참여형 이벤트와 프로모션을 직접 기획·실행했습니다. 고객의 문의와 반응을 살피며 콘텐츠와 운영 방식을 조정했습니다.",
+    image: "work/loui/social-content.png",
+    imageAlt: "루이루이 브랜드 Instagram 소셜 콘텐츠",
+    href: "#operations",
+    linkLabel: "VIEW EXPERIENCE ↘",
   },
 ];
 
@@ -121,7 +123,7 @@ const timeline = [
     period: "2020 — 2025",
     role: "Brand Founder & Marketing Director",
     company: "(주)루희 · 루이루이",
-    summary: "브랜드 기획·마케팅, 제품 생산, 외부 업체 조율, 고객·바이어 커뮤니케이션, 수출",
+    summary: "브랜드 기획·마케팅, Instagram·커뮤니티 운영, 이벤트, 외부 업체 조율, 고객·바이어 커뮤니케이션",
   },
   {
     period: "2015 — 2017",
@@ -458,10 +460,14 @@ export default function Home() {
             <a
               className="journal-card"
               href={item.href}
-              target="_blank"
-              rel="noreferrer"
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noreferrer" : undefined}
               key={item.title}
-              aria-label={`${item.title} 채널 열기`}
+              aria-label={
+                item.href.startsWith("http")
+                  ? `${item.title} 채널 열기`
+                  : `${item.title} 운영 경험 보기`
+              }
             >
               <div className="journal-media">
                 {item.image ? (
@@ -479,7 +485,7 @@ export default function Home() {
                 <p className="eyebrow">{item.eyebrow}</p>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <strong>OPEN CHANNEL ↗</strong>
+                <strong>{item.linkLabel ?? "OPEN CHANNEL ↗"}</strong>
               </div>
             </a>
           ))}
@@ -538,13 +544,15 @@ export default function Home() {
         <div className="practice-copy">
           <p>
             대표이사로서 브랜드 방향과 마케팅, 제품 기획, SNS·웹 콘텐츠,
-            고객 및 바이어 커뮤니케이션과 판매 운영을 총괄했습니다. 작은 조직에서
-            아이디어를 설명 가능한 메시지와 실제 상품·콘텐츠로 전환했습니다.
+            고객 및 바이어 커뮤니케이션과 판매 운영을 총괄했습니다. Instagram
+            페이지 콘텐츠 기획·업로드, 맘카페 등 타깃 커뮤니티 커뮤니케이션,
+            고객 참여형 이벤트와 프로모션도 직접 기획·운영했습니다.
           </p>
           <p>
-            외부 생산 업체와 샘플 수정, 발주, 납기와 최종 검수를 조율하고 해외
-            상담과 수출까지 진행했습니다. 여러 이해관계자의 요구를 듣고 일정 안에서
-            결과를 완성하는 운영 감각을 쌓은 경험입니다.
+            댓글·문의·후기에서 고객의 반응을 확인해 콘텐츠 메시지와 운영 방식을
+            조정했습니다. 외부 생산 업체와 샘플 수정, 발주, 납기와 최종 검수를
+            조율하고 해외 상담과 수출까지 진행하며, 여러 이해관계자의 요구를 듣고
+            일정 안에서 결과를 완성하는 운영 감각을 쌓았습니다.
           </p>
           <dl className="project-meta project-meta--light">
             <div>
@@ -557,7 +565,7 @@ export default function Home() {
             </div>
             <div>
               <dt>Scope</dt>
-              <dd>Content · Customer · Vendor · Schedule · Production · Export</dd>
+              <dd>Social · Community · Event · Customer · Vendor · Schedule</dd>
             </div>
           </dl>
         </div>
